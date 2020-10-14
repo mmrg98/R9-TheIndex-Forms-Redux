@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 
 import { postAuthor, resetErrors } from "./redux/actions/index";
 
-const AuthorForm = props => {
-  const [firstName, setFirstName] = useState("");
-
-  const [lastName, setLastName] = useState("");
-
-  const [imageUrl, setImageUrl] = useState("");
-  const [books, setBooks] = useState([]);
+const AuthorForm = (props) => {
+  const [author, setAuthor] = useState({
+    first_name: "",
+    last_name: "",
+    imageUrl: "",
+    books: [],
+  });
 
   useEffect(() => {
     return () => {
@@ -17,14 +17,8 @@ const AuthorForm = props => {
     };
   }, []); // Component Will unmount
 
-  const submitAuthor = event => {
+  const submitAuthor = (event) => {
     event.preventDefault();
-    let author = {
-      first_name: firstName,
-      last_name: lastName,
-      imageUrl: imageUrl,
-      books: books
-    };
     props.postAuthor(author, props.closeModal);
   };
 
@@ -35,7 +29,7 @@ const AuthorForm = props => {
       <form onSubmit={submitAuthor}>
         {!!errors.length && (
           <div className="alert alert-danger" role="alert">
-            {errors.map(error => (
+            {errors.map((error) => (
               <p key={error}>{error}</p>
             ))}
           </div>
@@ -64,17 +58,17 @@ const AuthorForm = props => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    errors: state.errorsState.errors
+    errors: state.errorsState.errors,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     postAuthor: (newAuthor, closeModal) =>
       dispatch(postAuthor(newAuthor, closeModal)),
-    resetErrors: () => dispatch(resetErrors())
+    resetErrors: () => dispatch(resetErrors()),
   };
 };
 
