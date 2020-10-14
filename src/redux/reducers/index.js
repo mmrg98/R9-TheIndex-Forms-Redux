@@ -7,7 +7,7 @@ import errorsReducer from "./errors";
 const rootReducer = combineReducers({
   authorState: authorReducer,
   authorsState: authorsReducer,
-  errorsState: errorsReducer
+  errorsState: errorsReducer,
 });
 
 export default rootReducer;

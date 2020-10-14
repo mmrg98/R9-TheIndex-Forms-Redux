@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import BookForm from "./BookForm";
 import Modal from "react-responsive-modal";
 
-const AddBookModal = props => {
+const AddBookModal = (props) => {
   const [open, setOpen] = useState(false);
 
   const openModal = () => setOpen(true);

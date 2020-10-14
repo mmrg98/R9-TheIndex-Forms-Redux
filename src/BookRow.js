@@ -4,7 +4,7 @@ const BookRow = ({ book }) => (
   <tr>
     <td>{book.title}</td>
     <td>
-      {book.authors.map(author => (
+      {book.authors.map((author) => (
         <div key={author.id}>{author.name}</div>
       ))}
     </td>

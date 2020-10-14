@@ -4,10 +4,10 @@ import { resetErrors } from "./errors";
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://the-index-api.herokuapp.com"
+  baseURL: "https://the-index-api.herokuapp.com",
 });
 
-export const fetchAuthors = () => async dispatch => {
+export const fetchAuthors = () => async (dispatch) => {
   try {
     const res = await instance.get("/api/authors/");
     const authors = res.data;
@@ -18,20 +18,20 @@ export const fetchAuthors = () => async dispatch => {
 };
 
 //POST THE AUTHOR TO https://the-index-api.herokuapp.com/api/authors/
-export const postAuthor = (newAuthor, closeModal) => async dispatch => {
+export const postAuthor = (newAuthor, closeModal) => async (dispatch) => {
   try {
     const res = await instance.post("/api/authors/", newAuthor);
     const author = res.data;
     dispatch(resetErrors());
     dispatch({
       type: ADD_AUTHOR,
-      payload: author
+      payload: author,
     });
     closeModal();
   } catch (err) {
     dispatch({
       type: SET_ERRORS,
-      payload: err.response.data
+      payload: err.response.data,
     });
   }
 };

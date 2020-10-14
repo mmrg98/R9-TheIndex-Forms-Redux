@@ -2,7 +2,7 @@ import { SET_AUTHORS, ADD_AUTHOR } from "../actions/actionTypes";
 
 const initialState = {
   authors: [],
-  loading: true
+  loading: true,
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,12 +12,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         authors: action.payload,
         filteredAuthors: action.payload,
-        loading: false
+        loading: false,
       };
     case ADD_AUTHOR:
       return {
         ...state,
-        authors: [action.payload].concat(state.authors)
+        authors: [action.payload].concat(state.authors),
       };
     default:
       return state;

@@ -7,11 +7,11 @@ import AuthorCard from "./AuthorCard";
 import SearchBar from "./SearchBar";
 import Loading from "./Loading";
 
-const AuthorsList = props => {
+const AuthorsList = (props) => {
   const [query, setQeury] = useState("");
 
   const filterAuthors = () => {
-    return props.authors.filter(author => {
+    return props.authors.filter((author) => {
       return `${author.first_name} ${author.last_name}`
         .toLowerCase()
         .includes(query.toLowerCase());
@@ -20,7 +20,7 @@ const AuthorsList = props => {
 
   if (props.loading) return <Loading />;
 
-  const authorCards = filterAuthors().map(author => (
+  const authorCards = filterAuthors().map((author) => (
     <AuthorCard
       key={author.first_name + author.last_name + author.id}
       author={author}
@@ -39,10 +39,10 @@ const AuthorsList = props => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     authors: state.authorsState.authors,
-    loading: state.authorsState.loading
+    loading: state.authorsState.loading,
   };
 };
 

@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchAuthorDetail } from "./redux/actions";
 
-const AuthorDetail = props => {
+const AuthorDetail = (props) => {
   const authorID = useParams().authorID;
   useEffect(() => {
     props.getAuthor(authorID);
@@ -35,16 +35,16 @@ const AuthorDetail = props => {
   }
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     author: state.authorState.author,
-    loading: state.authorState.loading
+    loading: state.authorState.loading,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getAuthor: authorID => dispatch(fetchAuthorDetail(authorID))
+    getAuthor: (authorID) => dispatch(fetchAuthorDetail(authorID)),
   };
 };
 

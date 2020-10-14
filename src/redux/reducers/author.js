@@ -1,12 +1,12 @@
 import {
   SET_AUTHOR_DETAIL,
   SET_AUTHOR_LOADING,
-  ADD_BOOK
+  ADD_BOOK,
 } from "../actions/actionTypes";
 
 const initialState = {
   author: null,
-  loading: true
+  loading: true,
 };
 
 const reducer = (state = initialState, action) => {
@@ -15,13 +15,13 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         author: action.payload,
-        loading: false
+        loading: false,
       };
 
     case SET_AUTHOR_LOADING:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
 
     case ADD_BOOK:

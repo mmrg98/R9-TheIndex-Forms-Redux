@@ -8,7 +8,7 @@ const SearchBar = ({ onChange }) => (
       <input
         className="form-control"
         type="text"
-        onChange={e => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
       />
       <div className="input-group-append">
         <span className="input-group-text">

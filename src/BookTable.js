@@ -3,7 +3,7 @@ import React from "react";
 import BookRow from "./BookRow";
 
 const BookTable = ({ books }) => {
-  const bookRows = books.map(book => (
+  const bookRows = books.map((book) => (
     <BookRow key={book.id + book.title} book={book} />
   ));
 
