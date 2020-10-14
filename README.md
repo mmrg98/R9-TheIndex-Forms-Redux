@@ -1,6 +1,6 @@
 ## Setup
 
-1. Fork the [repository](https://github.com/JoinCODED/RJS8-TheIndex-Forms-Redux)
+1. Fork the [repository](https://github.com/JoinCODED/R9-TheIndex-Forms-Redux)
 2. Clone it.
 3. `cd` into the project directory.
 4. Install the required packages for the task.
