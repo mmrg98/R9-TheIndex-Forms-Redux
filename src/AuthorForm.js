@@ -21,6 +21,9 @@ const AuthorForm = (props) => {
     event.preventDefault();
     props.postAuthor(author, props.closeModal);
   };
+  const handleChange = (event) => {
+    setAuthor({ ...author, [event.target.name]: event.target.value });
+  };
 
   const errors = props.errors;
 
@@ -38,19 +41,34 @@ const AuthorForm = (props) => {
           <div className="input-group-prepend">
             <span className="input-group-text">First Name</span>
           </div>
-          <input type="text" className="form-control" name="first_name" />
+          <input
+            type="text"
+            className="form-control"
+            name="first_name"
+            onChange={handleChange}
+          />
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
             <span className="input-group-text">Last Name</span>
           </div>
-          <input type="text" className="form-control" name="last_name" />
+          <input
+            type="text"
+            className="form-control"
+            name="last_name"
+            onChange={handleChange}
+          />
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
             <span className="input-group-text">Image URL</span>
           </div>
-          <input type="text" className="form-control" name="imageUrl" />
+          <input
+            type="text"
+            className="form-control"
+            name="imageUrl"
+            onChange={handleChange}
+          />
         </div>
         <input type="submit" />
       </form>
